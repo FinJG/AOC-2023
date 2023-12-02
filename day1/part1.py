@@ -3,10 +3,14 @@ with open("input.txt", "r") as f:
 
 num = 0
 for i in file:
-    for lis, multiple in ((i, 10), (reversed(i), 1)):
-        for j in lis:
-            if j.isnumeric():
-                num += int(j) * multiple
-                break
+    for j in i:
+        if j.isnumeric():
+            num += int(j) * 10
+            break
+
+    for j in reversed(i):
+        if j.isnumeric():
+            num += int(j)
+            break        
             
 print(num)
