@@ -23,9 +23,7 @@ for i in file:
 
     jokers = hand[0].count("J")
     hand[0] = [values.get(card, card) for card in hand[0]]
-
     unique_cards = len(set("".join(hand[0]))) or 1
-    num_of_duplicates = (hand[0].count(i) for i in hand[0])
     
     if unique_cards == 1:
         hands["Five of a kind"].append(hand)
@@ -39,6 +37,7 @@ for i in file:
         hands["High card"].append(hand)
         continue 
 
+    num_of_duplicates = (hand[0].count(i) for i in hand[0])
     if unique_cards == 3:
         if 3 - jokers in num_of_duplicates:
             hands["Three of a kind"].append(hand)
