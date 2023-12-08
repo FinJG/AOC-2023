@@ -1,4 +1,3 @@
-from collections import Counter
 with open("input.txt", "r") as f:
     file = f.read().strip().splitlines()
 
