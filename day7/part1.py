@@ -10,6 +10,7 @@ hands = {
     "One pair":[],
     "High card":[]
 }
+
 values = {
     "A":"E",
     "K":"D",

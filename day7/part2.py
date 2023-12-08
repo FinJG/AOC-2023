@@ -10,6 +10,7 @@ hands = {
     "One pair":[],
     "High card":[]
 }
+
 values = {
     "A":"E",
     "K":"D",
@@ -20,11 +21,10 @@ values = {
 
 for i in file:
     hand = i.split()
-
-    jokers = hand[0].count("J")
-    hand[0] = [values.get(card, card) for card in hand[0]]
     unique_cards = len(set("".join(hand[0]))) or 1
-    
+    hand[0] = [values.get(card, card) for card in hand[0]]
+    jokers = hand[0].count("J")  
+
     if unique_cards == 1:
         hands["Five of a kind"].append(hand)
         continue
