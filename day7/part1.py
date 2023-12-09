@@ -36,7 +36,7 @@ for i in file:
         hands["High card"].append(hand)
         continue 
 
-    num_of_duplicates = list(hand[0].count(i) for i in set(hand[0]))
+    num_of_duplicates = (hand[0].count(i) for i in hand[0])
     if unique_cards == 3:
         if 3 in num_of_duplicates:
             hands["Three of a kind"].append(hand)
@@ -54,11 +54,11 @@ for i in file:
             hands["Full house"].append(hand)
             continue
 
+
 num = 0
 ordered = []
 for key in hands:
     ordered.extend(sorted(hands[key], reverse=True))
-
 
 for i, v in enumerate(reversed(ordered)):
     num += int(v[1]) * (i + 1)
